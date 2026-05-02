@@ -6,7 +6,7 @@ const PORT = 8765;
 const DIR = __dirname;
 
 http.createServer((req, res) => {
-  const filePath = path.join(DIR, req.url === '/' ? '/shopping-list.html' : req.url);
+  const filePath = path.join(DIR, req.url === '/' ? '/index.html' : req.url);
   fs.readFile(filePath, (err, data) => {
     if (err) { res.writeHead(404); res.end('Not found'); return; }
     res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
